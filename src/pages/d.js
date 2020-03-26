@@ -2,7 +2,7 @@ import React from 'react'
 
 const D = () =>{
     return (
-        <h1>Mostrando DIsplay do Tablet</h1>
+        <h1>Mostrando Display do Tablet</h1>
     )
 }
 
