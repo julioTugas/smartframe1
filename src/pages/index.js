@@ -1,6 +1,16 @@
 import React, { useState } from 'react'
 import { Link } from 'gatsby'
 
+import firebase from '../lib/firebase';
+
+
+const db= firebase.firestore()
+db.collection("testes").get().then((querySnapshot) => {
+  querySnapshot.forEach((doc) => {
+      console.log(`${doc.id} => ${doc.data()}`);
+  });
+});
+
 const Index = () =>{
 
     const [valor, setValor]= useState(0)//hooks
