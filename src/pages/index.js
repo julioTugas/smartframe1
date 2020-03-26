@@ -5,11 +5,22 @@ import firebase from '../lib/firebase';
 
 
 const db= firebase.firestore()
+/*
 db.collection("testes").get().then((querySnapshot) => {
   querySnapshot.forEach((doc) => {
-      console.log(`${doc.id} => ${doc.data()}`);
+      //console.log(`${doc.id} => ${doc.data()}`);
+      console.log(`${doc.id} => `, doc.data());
   });
 });
+
+*/
+//Mudar em tempo Real
+db.collection('testes').onSnapshot(function(querySnapshot){
+  querySnapshot.forEach (( doc ) =>  {
+    console.log(`${doc.id} =>`, doc.data())
+  })
+}) 
+
 
 const Index = () =>{
 
